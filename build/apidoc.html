@@ -1,0 +1,4353 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/wajatimur/node-wa"
+
+    >node-wa (v0.1.5)</a>
+</h1>
+<h4>Node Whatsapp API Client</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa">module node-wa</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid">
+            function <span class="apidocSignatureSpan">node-wa.</span>uuid
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi
+            <span class="apidocSignatureSpan">(username, password, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getLastOnline">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getLastOnline
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getMessageNode">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getMessageNode
+            <span class="apidocSignatureSpan">(fmsg, child)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId, receiptType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getSubjectMessage">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getSubjectMessage
+            <span class="apidocSignatureSpan">(to, msgId, child)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.handlePing">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.handlePing
+            <span class="apidocSignatureSpan">(idx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.makeId">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.makeId
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendActive">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendActive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendAvailable">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendAvailable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendAvailableForChat">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendAvailableForChat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendClientConfig">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendClientConfig
+            <span class="apidocSignatureSpan">(sound, pushID, preview, platform)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendClose">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendDeleteFromRoster
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendDeliveredReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendGetPrivacyList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendGetStatus">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendGetStatus
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendInactive">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendInactive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendIq">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendIq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageReceived">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendMessageReceived
+            <span class="apidocSignatureSpan">(to, msgid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithBody">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendMessageWithBody
+            <span class="apidocSignatureSpan">(fmsg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendMessageWithMedia
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendNotificationReceived">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendNotificationReceived
+            <span class="apidocSignatureSpan">(jid, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendPaused">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendPaused
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendPresenceSubscriptionRequest
+            <span class="apidocSignatureSpan">(to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendRelayComplete">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendRelayComplete
+            <span class="apidocSignatureSpan">(id, ms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendRelayTimeout">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendRelayTimeout
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendSetPrivacyBlockedList
+            <span class="apidocSignatureSpan">(jidList)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendStatusUpdate">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendStatusUpdate
+            <span class="apidocSignatureSpan">(status)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSubjectReceived">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendSubjectReceived
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSubscribe">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendSubscribe
+            <span class="apidocSignatureSpan">(to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendTyping">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendTyping
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnavailable">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendUnavailable
+            <span class="apidocSignatureSpan">(status)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendUnsubscribeHim
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendUnsubscribeMe
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendVisibleReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-wa.</span>whatsapp</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.uuid">module node-wa.uuid</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.uuid">
+            function <span class="apidocSignatureSpan">node-wa.</span>uuid
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.BufferClass">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>BufferClass
+            <span class="apidocSignatureSpan">(arg, encodingOrOffset, length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.mathRNG">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>mathRNG
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.nodeRNG">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>nodeRNG
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.parse">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>parse
+            <span class="apidocSignatureSpan">(s, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.unparse">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>unparse
+            <span class="apidocSignatureSpan">(buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.v1">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>v1
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.uuid.v4">
+            function <span class="apidocSignatureSpan">node-wa.uuid.</span>v4
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi">module node-wa.waApi</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.waApi">
+            function <span class="apidocSignatureSpan">node-wa.</span>waApi
+            <span class="apidocSignatureSpan">(username, password, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.super_">
+            function <span class="apidocSignatureSpan">node-wa.waApi.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype">module node-wa.waApi.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getLastOnline">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getLastOnline
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getMessageNode">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getMessageNode
+            <span class="apidocSignatureSpan">(fmsg, child)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId, receiptType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getSubjectMessage">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getSubjectMessage
+            <span class="apidocSignatureSpan">(to, msgId, child)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.handlePing">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>handlePing
+            <span class="apidocSignatureSpan">(idx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.makeId">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>makeId
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendActive">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendActive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendAvailable">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendAvailableForChat">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailableForChat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendClientConfig">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClientConfig
+            <span class="apidocSignatureSpan">(sound, pushID, preview, platform)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendClose">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeleteFromRoster
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeliveredReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetPrivacyList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendGetStatus">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetStatus
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendInactive">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendInactive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendIq">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendIq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageReceived">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageReceived
+            <span class="apidocSignatureSpan">(to, msgid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithBody">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithBody
+            <span class="apidocSignatureSpan">(fmsg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithMedia
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendNotificationReceived">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendNotificationReceived
+            <span class="apidocSignatureSpan">(jid, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendPaused">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPaused
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPresenceSubscriptionRequest
+            <span class="apidocSignatureSpan">(to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendRelayComplete">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayComplete
+            <span class="apidocSignatureSpan">(id, ms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendRelayTimeout">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayTimeout
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSetPrivacyBlockedList
+            <span class="apidocSignatureSpan">(jidList)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendStatusUpdate">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendStatusUpdate
+            <span class="apidocSignatureSpan">(status)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSubjectReceived">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubjectReceived
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSubscribe">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubscribe
+            <span class="apidocSignatureSpan">(to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendTyping">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendTyping
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnavailable">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnavailable
+            <span class="apidocSignatureSpan">(status)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeHim
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeMe
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendVisibleReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.getLastOnline">module node-wa.waApi.prototype.getLastOnline</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getLastOnline.getLastOnline">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getLastOnline
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.getMessageNode">module node-wa.waApi.prototype.getMessageNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getMessageNode.getMessageNode">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getMessageNode
+            <span class="apidocSignatureSpan">(fmsg, child)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.getReceiptAck">module node-wa.waApi.prototype.getReceiptAck</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getReceiptAck.getReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId, receiptType)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.getSubjectMessage">module node-wa.waApi.prototype.getSubjectMessage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.getSubjectMessage.getSubjectMessage">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getSubjectMessage
+            <span class="apidocSignatureSpan">(to, msgId, child)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.handlePing">module node-wa.waApi.prototype.handlePing</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.handlePing.handlePing">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>handlePing
+            <span class="apidocSignatureSpan">(idx)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.makeId">module node-wa.waApi.prototype.makeId</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.makeId.makeId">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>makeId
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendActive">module node-wa.waApi.prototype.sendActive</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendActive.sendActive">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendActive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendAvailable">module node-wa.waApi.prototype.sendAvailable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendAvailable.sendAvailable">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendAvailableForChat">module node-wa.waApi.prototype.sendAvailableForChat</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendAvailableForChat.sendAvailableForChat">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailableForChat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendClientConfig">module node-wa.waApi.prototype.sendClientConfig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendClientConfig.sendClientConfig">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClientConfig
+            <span class="apidocSignatureSpan">(sound, pushID, preview, platform)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendClose">module node-wa.waApi.prototype.sendClose</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendClose.sendClose">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendDeleteFromRoster">module node-wa.waApi.prototype.sendDeleteFromRoster</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster.sendDeleteFromRoster">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeleteFromRoster
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendDeliveredReceiptAck">module node-wa.waApi.prototype.sendDeliveredReceiptAck</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck.sendDeliveredReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeliveredReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendGetPrivacyList">module node-wa.waApi.prototype.sendGetPrivacyList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList.sendGetPrivacyList">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetPrivacyList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendGetStatus">module node-wa.waApi.prototype.sendGetStatus</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendGetStatus.sendGetStatus">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetStatus
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendInactive">module node-wa.waApi.prototype.sendInactive</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendInactive.sendInactive">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendInactive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendIq">module node-wa.waApi.prototype.sendIq</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendIq.sendIq">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendIq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendMessageReceived">module node-wa.waApi.prototype.sendMessageReceived</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageReceived.sendMessageReceived">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageReceived
+            <span class="apidocSignatureSpan">(to, msgid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendMessageWithBody">module node-wa.waApi.prototype.sendMessageWithBody</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithBody.sendMessageWithBody">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithBody
+            <span class="apidocSignatureSpan">(fmsg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendMessageWithMedia">module node-wa.waApi.prototype.sendMessageWithMedia</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia.sendMessageWithMedia">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithMedia
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendNotificationReceived">module node-wa.waApi.prototype.sendNotificationReceived</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendNotificationReceived.sendNotificationReceived">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendNotificationReceived
+            <span class="apidocSignatureSpan">(jid, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendPaused">module node-wa.waApi.prototype.sendPaused</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendPaused.sendPaused">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPaused
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendPresenceSubscriptionRequest">module node-wa.waApi.prototype.sendPresenceSubscriptionRequest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest.sendPresenceSubscriptionRequest">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPresenceSubscriptionRequest
+            <span class="apidocSignatureSpan">(to)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendRelayComplete">module node-wa.waApi.prototype.sendRelayComplete</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendRelayComplete.sendRelayComplete">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayComplete
+            <span class="apidocSignatureSpan">(id, ms)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendRelayTimeout">module node-wa.waApi.prototype.sendRelayTimeout</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendRelayTimeout.sendRelayTimeout">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayTimeout
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendSetPrivacyBlockedList">module node-wa.waApi.prototype.sendSetPrivacyBlockedList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList.sendSetPrivacyBlockedList">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSetPrivacyBlockedList
+            <span class="apidocSignatureSpan">(jidList)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendStatusUpdate">module node-wa.waApi.prototype.sendStatusUpdate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendStatusUpdate.sendStatusUpdate">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendStatusUpdate
+            <span class="apidocSignatureSpan">(status)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendSubjectReceived">module node-wa.waApi.prototype.sendSubjectReceived</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSubjectReceived.sendSubjectReceived">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubjectReceived
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendSubscribe">module node-wa.waApi.prototype.sendSubscribe</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendSubscribe.sendSubscribe">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubscribe
+            <span class="apidocSignatureSpan">(to)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendTyping">module node-wa.waApi.prototype.sendTyping</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendTyping.sendTyping">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendTyping
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendUnavailable">module node-wa.waApi.prototype.sendUnavailable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnavailable.sendUnavailable">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnavailable
+            <span class="apidocSignatureSpan">(status)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendUnsubscribeHim">module node-wa.waApi.prototype.sendUnsubscribeHim</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim.sendUnsubscribeHim">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeHim
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendUnsubscribeMe">module node-wa.waApi.prototype.sendUnsubscribeMe</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe.sendUnsubscribeMe">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeMe
+            <span class="apidocSignatureSpan">(jid)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.waApi.prototype.sendVisibleReceiptAck">module node-wa.waApi.prototype.sendVisibleReceiptAck</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck.sendVisibleReceiptAck">
+            function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendVisibleReceiptAck
+            <span class="apidocSignatureSpan">(to, msgId)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-wa.whatsapp">module node-wa.whatsapp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.whatsapp.BinTreeNodeReader">
+            function <span class="apidocSignatureSpan">node-wa.whatsapp.</span>BinTreeNodeReader
+            <span class="apidocSignatureSpan">(inputstream, dictionary, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.whatsapp.BinTreeNodeWriter">
+            function <span class="apidocSignatureSpan">node-wa.whatsapp.</span>BinTreeNodeWriter
+            <span class="apidocSignatureSpan">(outputstream, dictionary, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-wa.whatsapp.ProtocolTreeNode">
+            function <span class="apidocSignatureSpan">node-wa.whatsapp.</span>ProtocolTreeNode
+            <span class="apidocSignatureSpan">(tag, attributes, children, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-wa.whatsapp.</span>log</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa" id="apidoc.module.node-wa">module node-wa</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid" id="apidoc.element.node-wa.uuid">
+        function <span class="apidocSignatureSpan">node-wa.</span>uuid
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v4(options, buf, offset) {
+  // Deprecated - &#x27;format&#x27; argument, as supported in v1.2
+  var i = buf &#x26;&#x26; offset || 0;
+
+  if (typeof(options) == &#x27;string&#x27;) {
+    buf = options == &#x27;binary&#x27; ? new BufferClass(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || _rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] &#x26; 0x0f) | 0x40;
+  rnds[8] = (rnds[8] &#x26; 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii &#x3c; 16; ii++) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || unparse(rnds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi" id="apidoc.element.node-wa.waApi">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi
+        <span class="apidocSignatureSpan">(username, password, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi = function (username, password, opt) {
+    var self = this;
+
+    self.debug = opt ? opt.debug : false;
+    self.iqId = 0;
+    console.log(&#x22;*** constructing waApi for &#x22; + username + &#x22;: &#x22; + password);
+    self.loginInfo = {
+        username: username,
+        password: password,
+        resource: &#x22;iPhone-2.8.2-5222&#x22;, // Symbian-2.6.61-443
+        domain: &#x22;s.whatsapp.net&#x22;,
+        displayName: opt.displayName || &#x22;Whazaa!&#x22;
+    };
+    self.socket = net.createConnection(5222, &#x27;bin-short.whatsapp.net&#x27;);
+    self.writer = new BinTreeNodeWriter(self.socket, dictionary, { debug: self.debug });
+    self.reader = new BinTreeNodeReader(self.socket, dictionary, { debug: self.debug });
+
+    self.socket.addListener(&#x27;connect&#x27;, function socketConnected() {
+        console.log(&#x22;*** socket connected&#x22;);
+        self.reader.streamStart();
+        self.writer.streamStart(self.loginInfo.domain, self.loginInfo.resource);
+
+        var features = [
+            new ProtocolTreeNode(&#x22;receipt_acks&#x22;),
+            // TODO: enabling this throws a stream:error at the moment.. bad dictionary?
+            //new ProtocolTreeNode(&#x22;w:profile:picture&#x22;, { type: &#x22;all&#x22; }),
+            new ProtocolTreeNode(&#x22;status&#x22;)
+        ];
+        var toWrite = new ProtocolTreeNode(&#x22;stream:features&#x22;, { }, features);
+
+        console.log(&#x22;writing features:&#x22; + toWrite);
+        self.writer.write(toWrite);
+
+        var node = new ProtocolTreeNode(&#x22;auth&#x22;, { &#x22;mechanism&#x22;:&#x22;DIGEST-MD5-1&#x22;,&#x22;xmlns&#x22;:&#x22;urn:ietf:params:xml:ns:xmpp-sasl&#x22; });
+        console.log(&#x22;sending auth:&#x22; + node);
+        self.writer.write(node);
+    }.bind(self));
+
+    self.socket.addListener(&#x27;close&#x27;, function socketClosed(x) {
+        console.log(&#x22;***************** SOCKET CLOSED ******************* &#x22; + JSON.stringify(x));
+        //if(!this.noReconnect)
+        //    this.socket.connect(5222, &#x27;bin-short.whatsapp.net&#x27;);
+        self.emit(&#x27;close&#x27;);
+    }.bind(self));
+
+    self.socket.addListener(&#x27;error&#x27;, function socketError(err) {
+        console.log(&#x22;***************** SOCKET ERROR ********************&#x22; + JSON.stringify(err));
+        // {&#x22;message&#x22;:&#x22;ECONNREFUSED, Could not contact DNS servers&#x22;,&#x22;stack&#x22;:&#x22;Error: ECONNREFUSED, Could not contact DNS servers\
+n    at IOWatcher.callback (dns.js:74:15)&#x22;,&#x22;errno&#x22;:11,&#x22;code&#x22;:&#x22;ECONNREFUSED&#x22;}
+        self.noReconnect = true;
+    }.bind(self));
+
+    self.reader.addListener(&#x27;stanza&#x27;, function handleStanza(node) {
+        if(node.tag == &#x22;failure&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;xmlns&#x22;) == &#x22;urn:ietf:params:xml:ns:xmpp-sasl&#x22; &#x26;&#x26; node.getChild(&#x22;not-
+authorized&#x22;))
+        {
+            console.log(&#x22;**** ACCESS NOT AUTHORIZED&#x22;);
+            self.emit(&#x27;notAuthorized&#x27;);
+            self.noReconnect = true;
+            self.socket.end();
+        }
+        if(node.tag == &#x22;error&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;code&#x22;) == &#x22;404&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;type&#x22;) == &#x22;cancel&#x22;)
+        {
+            //&#x3c;error code=&#x22;404&#x22; type=&#x22;cancel&#x22;&#x3e; are children of &#x3c;iq type=&#x22;error&#x22;, and I think we can safely ignore them as long as
+ we emit the error.. ??
+            return;
+        }
+        if(node.tag == &#x22;item-not-found&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;xmlns&#x22;) == &#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22;) {
+            // same as above
+            return;
+        }
+        console.log(&#x22;received stanza: &#x22; + node);
+    }.bind(self));
+
+    self.reader.addListener(&#x27;challenge&#x27;, function handleChallenge(node) {
+        console.log(&#x22;**** Decoding Challenge&#x22;);
+        var challenge = base64.base64.decode(node.data.toString(&#x22;binary&#x22;));
+        console.log(&#x22;*** Challenge = &#x22; + challenge);
+
+        var i = challenge.indexOf(&#x27;nonce=&#x22;&#x27;);
+        i += &#x27;nonce=&#x22;&#x27;.length;
+        var j = challenge.indexOf(&#x27;&#x22;&#x27;, i);
+        var nonce = challenge.substring(i, j);
+        console.log(&#x22;nonce=&#x22; + nonce);
+        var cnonce = uuid.v4();
+        console.log(&#x22;cnonce=&#x22; + cnonce);
+        var nc = &#x22;00000001&#x22;;
+        console.log(&#x22;nc=&#x22; + nc);
+        var digest_uri = &#x22;xmpp/&#x22; + self.loginInfo.domain;
+        console.log(&#x22;digest_uri=&#x22; + digest_uri);
+        var qop=&#x22;auth&#x22;;
+        var realm = self.loginI ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getLastOnline" id="apidoc.element.node-wa.waApi.prototype.getLastOnline">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getLastOnline
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.getLastOnline = function (jid) {
+    this.sendSubscribe(jid);
+    var idx = this.makeId(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;: jid }, [query]);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getMessageNode" id="apidoc.element.node-wa.waApi.prototype.getMessageNode">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getMessageNode
+        <span class="apidocSignatureSpan">(fmsg, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.getMessageNode = function (fmsg, child) {
+    var requestNode = undefined;
+    var serverNode = new ProtocolTreeNode(&#x22;server&#x22;);
+    var xNode = new ProtocolTreeNode(&#x22;x&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:x:event&#x22; }, [ serverNode ]);
+    var childCount = (requestNode ? 1 : 0) + 2;
+    var messageChildren = [];
+    var i = 0;
+    if(requestNode) {
+        messageChildren[i] = requestNode;
+        i++;
+    }
+    messageChildren[i] = xNode;
+    i++;
+    messageChildren[i] = child;
+    i++;
+    //var key = fmsg.key; // eval(fmsg.key) ???
+    var key = { id: Math.round(Date.now() / 1000) + &#x22;-1&#x22; };
+    //var key = { id: &#x22;123456789-3&#x22; };
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: fmsg.to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: key.id }, messageChildren);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getReceiptAck" id="apidoc.element.node-wa.waApi.prototype.getReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId, receiptType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.getReceiptAck = function (to, msgId, receiptType) {
+    var ackNode = new ProtocolTreeNode(&#x22;ack&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22;, &#x22;type&#x22;: receiptType });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: msgId }, [ ackNode ]);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getSubjectMessage" id="apidoc.element.node-wa.waApi.prototype.getSubjectMessage">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.getSubjectMessage
+        <span class="apidocSignatureSpan">(to, msgId, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.getSubjectMessage = function (to, msgId, child) {
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;subject&#x22;, &#x22;id&#x22;: msgId }, [ child ]);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.handlePing" id="apidoc.element.node-wa.waApi.prototype.handlePing">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.handlePing
+        <span class="apidocSignatureSpan">(idx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.handlePing = function (idx) {
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;type&#x22;: &#x22;result&#x22;, &#x22;to&#x22;: this.loginInfo.domain, &#x22;id&#x22;: idx });
+    console.log(&#x22;received ping &#x22; + idx + &#x22;, sending Pong &#x22; + iqNode);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.makeId" id="apidoc.element.node-wa.waApi.prototype.makeId">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.makeId
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.makeId = function (prefix) {
+    this.iqId++;
+    var idx = &#x22;&#x22;;
+    //if(this.verbose) {
+        idx += prefix + this.iqId;
+    //} else {
+    //    idx = this.iqId.toString(16);
+    //}
+    return idx;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendActive" id="apidoc.element.node-wa.waApi.prototype.sendActive">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendActive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendActive = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;active&#x22; }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendAvailable" id="apidoc.element.node-wa.waApi.prototype.sendAvailable">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendAvailable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendAvailable = function () {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;available&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendAvailableForChat" id="apidoc.element.node-wa.waApi.prototype.sendAvailableForChat">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendAvailableForChat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendAvailableForChat = function () {
+    var showNode = new ProtocolTreeNode(&#x22;show&#x22;, undefined, undefined, &#x22;chat&#x22;);
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;name&#x22;: this.loginInfo.displayName || &#x22;&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendClientConfig" id="apidoc.element.node-wa.waApi.prototype.sendClientConfig">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendClientConfig
+        <span class="apidocSignatureSpan">(sound, pushID, preview, platform)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendClientConfig = function (sound, pushID, preview, platform) {
+    var idx = this.makeId(&#x22;config_&#x22;);
+    var configNode = new ProtocolTreeNode(&#x22;config&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:whatsapp:push&#x22;, &#x22;sound&#x22;: sound, &#x22;id&#x22;: pushID, &#x22;preview&#x22;:
+preview ? &#x22;1&#x22; : &#x22;0&#x22;, &#x22;platform&#x22;: platform });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;set&#x22;, &#x22;to&#x22;: this.loginInfo.domain }, [ configNode ]);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendClose" id="apidoc.element.node-wa.waApi.prototype.sendClose">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendClose = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unavailable&#x22; }));
+    // TODO: implement this
+    // this.writer.streamEnd();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster" id="apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendDeleteFromRoster
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendDeleteFromRoster = function (jid) {
+    var v = this.makeId(&#x22;roster_&#x22;);
+    var child = new ProtocolTreeNode(&#x22;item&#x22;, { jid: jid, subscription: &#x22;remove&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:roster&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { type: &#x22;set&#x22;, id: v }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck" id="apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendDeliveredReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendDeliveredReceiptAck = function (to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;delivered&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList" id="apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendGetPrivacyList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendGetPrivacyList = function () {
+    var text = this.makeId(&#x22;privacylist_&#x22;);
+    var child = new ProtocolTreeNode(&#x22;list&#x22;, { name: &#x22;default&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:privacy&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { id: text, type: &#x22;get&#x22; }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendGetStatus" id="apidoc.element.node-wa.waApi.prototype.sendGetStatus">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendGetStatus
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendGetStatus = function (jid) {
+    var num = jid.indexOf(&#x27;@&#x27;);
+    if(num &#x3e; -1) {
+        jid = jid.substring(0, num) + &#x22;@s.us&#x22;;
+    }
+    var v = this.makeId(&#x22;&#x22;);
+    var actionnode = new ProtocolTreeNode(&#x22;action&#x22;, { type: &#x22;get&#x22; });
+    var node = new ProtocolTreeNode(&#x22;message&#x22;, { to: jid, type: &#x22;action&#x22;, id: v }, [ actionnode ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendInactive" id="apidoc.element.node-wa.waApi.prototype.sendInactive">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendInactive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendInactive = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;inactive&#x22; }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendIq" id="apidoc.element.node-wa.waApi.prototype.sendIq">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendIq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendIq = function () {
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;to&#x22;: &#x22;g.us&#x22;, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;id&#x22;: Date.now() + &#x22;-0&#x22; }, undefined, &#x27;expired&#x27;);
+    this.writer.write(node);
+    node = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;to&#x22;: &#x22;s.whatsapp.net&#x22;, &#x22;type&#x22;: &#x22;set&#x22;, &#x22;id&#x22;: Date.now() + &#x22;-1&#x22; }, undefined, &#x27;expired&#x27;);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageReceived" id="apidoc.element.node-wa.waApi.prototype.sendMessageReceived">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendMessageReceived
+        <span class="apidocSignatureSpan">(to, msgid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendMessageReceived = function (to, msgid) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: msgid }, [ receivedNode ]);
+    this.writer.write(messageNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithBody" id="apidoc.element.node-wa.waApi.prototype.sendMessageWithBody">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendMessageWithBody
+        <span class="apidocSignatureSpan">(fmsg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendMessageWithBody = function (fmsg) {
+    var bodyNode = new ProtocolTreeNode(&#x22;body&#x22;, undefined, undefined, fmsg.content);
+    this.writer.write(this.getMessageNode(fmsg, bodyNode));
+    this.msgId++;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia" id="apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendMessageWithMedia
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendMessageWithMedia = function () {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendNotificationReceived" id="apidoc.element.node-wa.waApi.prototype.sendNotificationReceived">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendNotificationReceived
+        <span class="apidocSignatureSpan">(jid, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendNotificationReceived = function (jid, id) {
+    var child = new ProtocolTreeNode(&#x22;received&#x22;, { xmlns: &#x22;urn:xmpp:receipts&#x22; });
+    var node = new ProtocolTreeNode(&#x22;message&#x22;, { to: jid, type: &#x22;notification&#x22;, id: id }, [ child ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendPaused" id="apidoc.element.node-wa.waApi.prototype.sendPaused">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendPaused
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendPaused = function (jid) {
+    console.log(&#x22;*** Paused&#x22;);
+    var composing = new ProtocolTreeNode(&#x22;paused&#x22;, { &#x22;xmlns&#x22;: &#x22;http://jabber.org/protocol/chatstates&#x22; });
+    var message = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: jid, &#x22;type&#x22;: &#x22;chat&#x22; }, [ composing ]);
+    this.writer.write(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest" id="apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendPresenceSubscriptionRequest
+        <span class="apidocSignatureSpan">(to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendPresenceSubscriptionRequest = function (to) {
+    var node = new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;subscribe&#x22;, to: to });
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendRelayComplete" id="apidoc.element.node-wa.waApi.prototype.sendRelayComplete">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendRelayComplete
+        <span class="apidocSignatureSpan">(id, ms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendRelayComplete = function (id, ms) {
+    var child = new ProtocolTreeNode(&#x22;relay&#x22;, { elapsed: ms });
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { xmlns: &#x22;w:p:r&#x22;, type: &#x22;result&#x22;, to: &#x22;s.whatsapp.net&#x22;, id: id }, [ child ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendRelayTimeout" id="apidoc.element.node-wa.waApi.prototype.sendRelayTimeout">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendRelayTimeout
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendRelayTimeout = function (id) {
+    var child = new ProtocolTreeNode(&#x22;remote-server-timeout&#x22;, { xmlns: &#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;error&#x22;, { code: &#x22;504&#x22;, type: &#x22;wait&#x22; }, [ child ] );
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { xmlns: &#x22;w:p:r&#x22;, type: &#x22;error&#x22;, to: &#x22;s.whatsapp.net&#x22;, id: id }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList" id="apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendSetPrivacyBlockedList
+        <span class="apidocSignatureSpan">(jidList)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendSetPrivacyBlockedList = function (jidList) {
+    var listnodes = [];
+    for(var x = 0; x &#x3c; jidList.length; x++) {
+        listnodes.push(new ProtocolTreeNode(&#x22;item&#x22;, { type: &#x22;jid&#x22;, value: jidList[x], action: &#x22;deny&#x22;, order: x }));
+    }
+    var child = new ProtocolTreeNode(&#x22;list&#x22;, { name: &#x22;default&#x22; }, listnodes);
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:privacy&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { id: text, type: &#x22;set&#x22; }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendStatusUpdate" id="apidoc.element.node-wa.waApi.prototype.sendStatusUpdate">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendStatusUpdate
+        <span class="apidocSignatureSpan">(status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendStatusUpdate = function (status) {
+    this.sendMessageWithBody({ to: &#x22;s.us&#x22;, content: status });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSubjectReceived" id="apidoc.element.node-wa.waApi.prototype.sendSubjectReceived">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendSubjectReceived
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendSubjectReceived = function (to, msgId) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = this.getSubjectMessage(to, msgId, receivedNode);
+    this.writer.write(messageNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSubscribe" id="apidoc.element.node-wa.waApi.prototype.sendSubscribe">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendSubscribe
+        <span class="apidocSignatureSpan">(to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendSubscribe = function (to) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;subscribe&#x22;, &#x22;to&#x22;: to });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendTyping" id="apidoc.element.node-wa.waApi.prototype.sendTyping">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendTyping
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendTyping = function (jid) {
+    console.log(&#x22;*** Typing&#x22;);
+    var composing = new ProtocolTreeNode(&#x22;composing&#x22;, { &#x22;xmlns&#x22;: &#x22;http://jabber.org/protocol/chatstates&#x22; });
+    var message = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: jid, &#x22;type&#x22;: &#x22;chat&#x22; }, [ composing ]);
+    this.writer.write(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnavailable" id="apidoc.element.node-wa.waApi.prototype.sendUnavailable">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendUnavailable
+        <span class="apidocSignatureSpan">(status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendUnavailable = function (status) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;unavailable&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim" id="apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendUnsubscribeHim
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendUnsubscribeHim = function (jid) {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unsubscribed&#x22;, to: jid }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe" id="apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendUnsubscribeMe
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendUnsubscribeMe = function (jid) {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unsubscribe&#x22;, to: jid }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck" id="apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi.prototype.sendVisibleReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi.prototype.sendVisibleReceiptAck = function (to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;visible&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.uuid" id="apidoc.module.node-wa.uuid">module node-wa.uuid</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.uuid" id="apidoc.element.node-wa.uuid.uuid">
+        function <span class="apidocSignatureSpan">node-wa.</span>uuid
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v4(options, buf, offset) {
+  // Deprecated - &#x27;format&#x27; argument, as supported in v1.2
+  var i = buf &#x26;&#x26; offset || 0;
+
+  if (typeof(options) == &#x27;string&#x27;) {
+    buf = options == &#x27;binary&#x27; ? new BufferClass(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || _rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] &#x26; 0x0f) | 0x40;
+  rnds[8] = (rnds[8] &#x26; 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii &#x3c; 16; ii++) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || unparse(rnds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.BufferClass" id="apidoc.element.node-wa.uuid.BufferClass">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>BufferClass
+        <span class="apidocSignatureSpan">(arg, encodingOrOffset, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Buffer(arg, encodingOrOffset, length) {
+  // Common case.
+  if (typeof arg === &#x27;number&#x27;) {
+    if (typeof encodingOrOffset === &#x27;string&#x27;) {
+      throw new Error(
+        &#x27;If encoding is specified then the first argument must be a string&#x27;
+      );
+    }
+    return Buffer.allocUnsafe(arg);
+  }
+  return Buffer.from(arg, encodingOrOffset, length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.mathRNG" id="apidoc.element.node-wa.uuid.mathRNG">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>mathRNG
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mathRNG = function () {
+  var r, b = _rndBytes, i = 0;
+
+  for (var i = 0, r; i &#x3c; 16; i++) {
+    if ((i &#x26; 0x03) == 0) r = Math.random() * 0x100000000;
+    b[i] = r &#x3e;&#x3e;&#x3e; ((i &#x26; 0x03) &#x3c;&#x3c; 3) &#x26; 0xff;
+  }
+
+  return b;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.nodeRNG" id="apidoc.element.node-wa.uuid.nodeRNG">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>nodeRNG
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nodeRNG = function () {
+  return _rb(16);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.parse" id="apidoc.element.node-wa.uuid.parse">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>parse
+        <span class="apidocSignatureSpan">(s, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(s, buf, offset) {
+  var i = (buf &#x26;&#x26; offset) || 0, ii = 0;
+
+  buf = buf || [];
+  s.toLowerCase().replace(/[0-9a-f]{2}/g, function(oct) {
+    if (ii &#x3c; 16) { // Don&#x27;t overflow!
+      buf[i + ii++] = _hexToByte[oct];
+    }
+  });
+
+  // Zero out remaining bytes if string was short
+  while (ii &#x3c; 16) {
+    buf[i + ii++] = 0;
+  }
+
+  return buf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.unparse" id="apidoc.element.node-wa.uuid.unparse">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>unparse
+        <span class="apidocSignatureSpan">(buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unparse(buf, offset) {
+  var i = offset || 0, bth = _byteToHex;
+  return  bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] + &#x27;-&#x27; +
+          bth[buf[i++]] + bth[buf[i++]] + &#x27;-&#x27; +
+          bth[buf[i++]] + bth[buf[i++]] + &#x27;-&#x27; +
+          bth[buf[i++]] + bth[buf[i++]] + &#x27;-&#x27; +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.v1" id="apidoc.element.node-wa.uuid.v1">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>v1
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v1(options, buf, offset) {
+  var i = buf &#x26;&#x26; offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+
+  var clockseq = options.clockseq != null ? options.clockseq : _clockseq;
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren&#x27;t precise enough for this, so
+  // time is handled internally as &#x27;msecs&#x27; (integer milliseconds) and &#x27;nsecs&#x27;
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs != null ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid&#x27;s generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs != null ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt &#x3c; 0 &#x26;&#x26; options.clockseq == null) {
+    clockseq = clockseq + 1 &#x26; 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we&#x27;ve moved onto a new
+  // time interval
+  if ((dt &#x3c; 0 || msecs &#x3e; _lastMSecs) &#x26;&#x26; options.nsecs == null) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs &#x3e;= 10000) {
+    throw new Error(&#x27;uuid.v1(): Can\&#x27;t create more than 10M uuids/sec&#x27;);
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs &#x26; 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl &#x3e;&#x3e;&#x3e; 24 &#x26; 0xff;
+  b[i++] = tl &#x3e;&#x3e;&#x3e; 16 &#x26; 0xff;
+  b[i++] = tl &#x3e;&#x3e;&#x3e; 8 &#x26; 0xff;
+  b[i++] = tl &#x26; 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) &#x26; 0xfffffff;
+  b[i++] = tmh &#x3e;&#x3e;&#x3e; 8 &#x26; 0xff;
+  b[i++] = tmh &#x26; 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh &#x3e;&#x3e;&#x3e; 24 &#x26; 0xf | 0x10; // include version
+  b[i++] = tmh &#x3e;&#x3e;&#x3e; 16 &#x26; 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq &#x3e;&#x3e;&#x3e; 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq &#x26; 0xff;
+
+  // `node`
+  var node = options.node || _nodeId;
+  for (var n = 0; n &#x3c; 6; n++) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : unparse(b);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// time interval
+if ((dt &#x3c; 0 || msecs &#x3e; _lastMSecs) &#x26;&#x26; options.nsecs == null) {
+  nsecs = 0;
+}
+
+// Per 4.2.1.2 Throw error if too many uuids are requested
+if (nsecs &#x3e;= 10000) {
+  throw new Error(&#x27;uuid.<span class="apidocCodeKeywordSpan">v1</span>(): Can\&#x27;t create more than 10M uuids/sec&#x27;);
+}
+
+_lastMSecs = msecs;
+_lastNSecs = nsecs;
+_clockseq = clockseq;
+
+// Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.uuid.v4" id="apidoc.element.node-wa.uuid.v4">
+        function <span class="apidocSignatureSpan">node-wa.uuid.</span>v4
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v4(options, buf, offset) {
+  // Deprecated - &#x27;format&#x27; argument, as supported in v1.2
+  var i = buf &#x26;&#x26; offset || 0;
+
+  if (typeof(options) == &#x27;string&#x27;) {
+    buf = options == &#x27;binary&#x27; ? new BufferClass(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || _rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] &#x26; 0x0f) | 0x40;
+  rnds[8] = (rnds[8] &#x26; 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii &#x3c; 16; ii++) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || unparse(rnds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(&#x22;*** Challenge = &#x22; + challenge);
+
+var i = challenge.indexOf(&#x27;nonce=&#x22;&#x27;);
+i += &#x27;nonce=&#x22;&#x27;.length;
+var j = challenge.indexOf(&#x27;&#x22;&#x27;, i);
+var nonce = challenge.substring(i, j);
+console.log(&#x22;nonce=&#x22; + nonce);
+var cnonce = uuid.<span class="apidocCodeKeywordSpan">v4</span>();
+console.log(&#x22;cnonce=&#x22; + cnonce);
+var nc = &#x22;00000001&#x22;;
+console.log(&#x22;nc=&#x22; + nc);
+var digest_uri = &#x22;xmpp/&#x22; + self.loginInfo.domain;
+console.log(&#x22;digest_uri=&#x22; + digest_uri);
+var qop=&#x22;auth&#x22;;
+var realm = self.loginInfo.domain;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi" id="apidoc.module.node-wa.waApi">module node-wa.waApi</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.waApi" id="apidoc.element.node-wa.waApi.waApi">
+        function <span class="apidocSignatureSpan">node-wa.</span>waApi
+        <span class="apidocSignatureSpan">(username, password, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waApi = function (username, password, opt) {
+    var self = this;
+
+    self.debug = opt ? opt.debug : false;
+    self.iqId = 0;
+    console.log(&#x22;*** constructing waApi for &#x22; + username + &#x22;: &#x22; + password);
+    self.loginInfo = {
+        username: username,
+        password: password,
+        resource: &#x22;iPhone-2.8.2-5222&#x22;, // Symbian-2.6.61-443
+        domain: &#x22;s.whatsapp.net&#x22;,
+        displayName: opt.displayName || &#x22;Whazaa!&#x22;
+    };
+    self.socket = net.createConnection(5222, &#x27;bin-short.whatsapp.net&#x27;);
+    self.writer = new BinTreeNodeWriter(self.socket, dictionary, { debug: self.debug });
+    self.reader = new BinTreeNodeReader(self.socket, dictionary, { debug: self.debug });
+
+    self.socket.addListener(&#x27;connect&#x27;, function socketConnected() {
+        console.log(&#x22;*** socket connected&#x22;);
+        self.reader.streamStart();
+        self.writer.streamStart(self.loginInfo.domain, self.loginInfo.resource);
+
+        var features = [
+            new ProtocolTreeNode(&#x22;receipt_acks&#x22;),
+            // TODO: enabling this throws a stream:error at the moment.. bad dictionary?
+            //new ProtocolTreeNode(&#x22;w:profile:picture&#x22;, { type: &#x22;all&#x22; }),
+            new ProtocolTreeNode(&#x22;status&#x22;)
+        ];
+        var toWrite = new ProtocolTreeNode(&#x22;stream:features&#x22;, { }, features);
+
+        console.log(&#x22;writing features:&#x22; + toWrite);
+        self.writer.write(toWrite);
+
+        var node = new ProtocolTreeNode(&#x22;auth&#x22;, { &#x22;mechanism&#x22;:&#x22;DIGEST-MD5-1&#x22;,&#x22;xmlns&#x22;:&#x22;urn:ietf:params:xml:ns:xmpp-sasl&#x22; });
+        console.log(&#x22;sending auth:&#x22; + node);
+        self.writer.write(node);
+    }.bind(self));
+
+    self.socket.addListener(&#x27;close&#x27;, function socketClosed(x) {
+        console.log(&#x22;***************** SOCKET CLOSED ******************* &#x22; + JSON.stringify(x));
+        //if(!this.noReconnect)
+        //    this.socket.connect(5222, &#x27;bin-short.whatsapp.net&#x27;);
+        self.emit(&#x27;close&#x27;);
+    }.bind(self));
+
+    self.socket.addListener(&#x27;error&#x27;, function socketError(err) {
+        console.log(&#x22;***************** SOCKET ERROR ********************&#x22; + JSON.stringify(err));
+        // {&#x22;message&#x22;:&#x22;ECONNREFUSED, Could not contact DNS servers&#x22;,&#x22;stack&#x22;:&#x22;Error: ECONNREFUSED, Could not contact DNS servers\
+n    at IOWatcher.callback (dns.js:74:15)&#x22;,&#x22;errno&#x22;:11,&#x22;code&#x22;:&#x22;ECONNREFUSED&#x22;}
+        self.noReconnect = true;
+    }.bind(self));
+
+    self.reader.addListener(&#x27;stanza&#x27;, function handleStanza(node) {
+        if(node.tag == &#x22;failure&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;xmlns&#x22;) == &#x22;urn:ietf:params:xml:ns:xmpp-sasl&#x22; &#x26;&#x26; node.getChild(&#x22;not-
+authorized&#x22;))
+        {
+            console.log(&#x22;**** ACCESS NOT AUTHORIZED&#x22;);
+            self.emit(&#x27;notAuthorized&#x27;);
+            self.noReconnect = true;
+            self.socket.end();
+        }
+        if(node.tag == &#x22;error&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;code&#x22;) == &#x22;404&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;type&#x22;) == &#x22;cancel&#x22;)
+        {
+            //&#x3c;error code=&#x22;404&#x22; type=&#x22;cancel&#x22;&#x3e; are children of &#x3c;iq type=&#x22;error&#x22;, and I think we can safely ignore them as long as
+ we emit the error.. ??
+            return;
+        }
+        if(node.tag == &#x22;item-not-found&#x22; &#x26;&#x26; node.getAttributeValue(&#x22;xmlns&#x22;) == &#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22;) {
+            // same as above
+            return;
+        }
+        console.log(&#x22;received stanza: &#x22; + node);
+    }.bind(self));
+
+    self.reader.addListener(&#x27;challenge&#x27;, function handleChallenge(node) {
+        console.log(&#x22;**** Decoding Challenge&#x22;);
+        var challenge = base64.base64.decode(node.data.toString(&#x22;binary&#x22;));
+        console.log(&#x22;*** Challenge = &#x22; + challenge);
+
+        var i = challenge.indexOf(&#x27;nonce=&#x22;&#x27;);
+        i += &#x27;nonce=&#x22;&#x27;.length;
+        var j = challenge.indexOf(&#x27;&#x22;&#x27;, i);
+        var nonce = challenge.substring(i, j);
+        console.log(&#x22;nonce=&#x22; + nonce);
+        var cnonce = uuid.v4();
+        console.log(&#x22;cnonce=&#x22; + cnonce);
+        var nc = &#x22;00000001&#x22;;
+        console.log(&#x22;nc=&#x22; + nc);
+        var digest_uri = &#x22;xmpp/&#x22; + self.loginInfo.domain;
+        console.log(&#x22;digest_uri=&#x22; + digest_uri);
+        var qop=&#x22;auth&#x22;;
+        var realm = self.loginI ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.super_" id="apidoc.element.node-wa.waApi.super_">
+        function <span class="apidocSignatureSpan">node-wa.waApi.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype" id="apidoc.module.node-wa.waApi.prototype">module node-wa.waApi.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getLastOnline" id="apidoc.element.node-wa.waApi.prototype.getLastOnline">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getLastOnline
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastOnline = function (jid) {
+    this.sendSubscribe(jid);
+    var idx = this.makeId(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;: jid }, [query]);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getMessageNode" id="apidoc.element.node-wa.waApi.prototype.getMessageNode">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getMessageNode
+        <span class="apidocSignatureSpan">(fmsg, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMessageNode = function (fmsg, child) {
+    var requestNode = undefined;
+    var serverNode = new ProtocolTreeNode(&#x22;server&#x22;);
+    var xNode = new ProtocolTreeNode(&#x22;x&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:x:event&#x22; }, [ serverNode ]);
+    var childCount = (requestNode ? 1 : 0) + 2;
+    var messageChildren = [];
+    var i = 0;
+    if(requestNode) {
+        messageChildren[i] = requestNode;
+        i++;
+    }
+    messageChildren[i] = xNode;
+    i++;
+    messageChildren[i] = child;
+    i++;
+    //var key = fmsg.key; // eval(fmsg.key) ???
+    var key = { id: Math.round(Date.now() / 1000) + &#x22;-1&#x22; };
+    //var key = { id: &#x22;123456789-3&#x22; };
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: fmsg.to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: key.id }, messageChildren);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //var key = { id: &#x22;123456789-3&#x22; };
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: fmsg.to, &#x22;type&#x22;: &#x22;chat&#x22;, &#
+x22;id&#x22;: key.id }, messageChildren);
+    return messageNode;
+}
+
+waApi.prototype.sendMessageWithBody = function(fmsg) {
+    var bodyNode = new ProtocolTreeNode(&#x22;body&#x22;, undefined, undefined, fmsg.content);
+    this.writer.write(this.<span class="apidocCodeKeywordSpan">getMessageNode</span>(fmsg, bodyNode));
+    this.msgId++;
+}
+
+waApi.prototype.sendMessageWithMedia = function() {
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getReceiptAck" id="apidoc.element.node-wa.waApi.prototype.getReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId, receiptType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getReceiptAck = function (to, msgId, receiptType) {
+    var ackNode = new ProtocolTreeNode(&#x22;ack&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22;, &#x22;type&#x22;: receiptType });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: msgId }, [ ackNode ]);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+waApi.prototype.sendMessageReceived = function(to, msgid) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;
+id&#x22;: msgid }, [ receivedNode ]);
+    this.writer.write(messageNode);
+}
+
+waApi.prototype.sendDeliveredReceiptAck = function(to, msgId) {
+    this.writer.write(this.<span class="apidocCodeKeywordSpan">getReceiptAck</span>(to, msgId, &#x22;delivered&#x22;));
+}
+
+// TODO: use sendVisibileReceiptAck
+waApi.prototype.sendVisibleReceiptAck = function(to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;visible&#x22;));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getSubjectMessage" id="apidoc.element.node-wa.waApi.prototype.getSubjectMessage">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getSubjectMessage
+        <span class="apidocSignatureSpan">(to, msgId, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSubjectMessage = function (to, msgId, child) {
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;subject&#x22;, &#x22;id&#x22;: msgId }, [ child ]);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+waApi.prototype.getSubjectMessage = function(to, msgId, child) {
+var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;subject&#x22;, &#x22;id
+&#x22;: msgId }, [ child ]);
+return messageNode;
+}
+
+waApi.prototype.sendSubjectReceived = function(to, msgId) {
+var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+var messageNode = this.<span class="apidocCodeKeywordSpan">getSubjectMessage</span>(to, msgId, receivedNode);
+this.writer.write(messageNode);
+}
+
+waApi.prototype.sendMessageReceived = function(to, msgid) {
+var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#
+x22;: msgid }, [ receivedNode ]);
+this.writer.write(messageNode);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.handlePing" id="apidoc.element.node-wa.waApi.prototype.handlePing">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>handlePing
+        <span class="apidocSignatureSpan">(idx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handlePing = function (idx) {
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;type&#x22;: &#x22;result&#x22;, &#x22;to&#x22;: this.loginInfo.domain, &#x22;id&#x22;: idx });
+    console.log(&#x22;received ping &#x22; + idx + &#x22;, sending Pong &#x22; + iqNode);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if(!iqType) {
+        throw(&#x22;received iq with no type, data=&#x22; + data);
+    }
+    switch(iqType) {
+        case &#x22;get&#x22;:
+            var childNode = data.getChild(0);
+            if(childNode.tag === &#x22;ping&#x22;) {
+                self.<span class="apidocCodeKeywordSpan">handlePing</span>(idx);
+            }
+            break;
+        case &#x22;error&#x22;:
+/*
+&#x3c;iq from=&#x22;+9597896522@s.whatsapp.net&#x22; id=&#x22;last_14&#x22; type=&#x22;error&#x22;&#x3e;
+&#x3c;error code=&#x22;404&#x22; type=&#x22;cancel&#x22;&#x3e;
+&#x3c;item-not-found xmlns=&#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22;&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.makeId" id="apidoc.element.node-wa.waApi.prototype.makeId">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>makeId
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeId = function (prefix) {
+    this.iqId++;
+    var idx = &#x22;&#x22;;
+    //if(this.verbose) {
+        idx += prefix + this.iqId;
+    //} else {
+    //    idx = this.iqId.toString(16);
+    //}
+    return idx;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //}
+    return idx;
+}
+
+// TODO: use getLastOnline
+waApi.prototype.getLastOnline = function(jid) {
+    this.sendSubscribe(jid);
+    var idx = this.<span class="apidocCodeKeywordSpan">makeId</span>(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;:
+jid }, [query]);
+    this.writer.write(iqNode);
+}
+
+// TODO: use sendIq?
+waApi.prototype.sendIq = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendActive" id="apidoc.element.node-wa.waApi.prototype.sendActive">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendActive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendActive = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;active&#x22; }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendAvailable" id="apidoc.element.node-wa.waApi.prototype.sendAvailable">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendAvailable = function () {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;available&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+}.bind(self));
+
+self.reader.addListener(&#x27;loggedin&#x27;, function loggedIn(data) {
+    console.log(&#x22;*** Successfully logged in.  Account status: &#x22; + data.getAttributeValue(&#x22;status&#x22;));
+    console.log(&#x22;*** Creation Timestamp: &#x22; + data.getAttributeValue(&#x22;creation&#x22;));
+    console.log(&#x22;*** Expiration Timestamp: &#x22; + data.getAttributeValue(&#x22;expiration&#x22;));
+    self.<span class="apidocCodeKeywordSpan">sendAvailable</span>();
+    self.sendAvailableForChat();
+    self.emit(&#x27;loggedin&#x27;);
+}.bind(self));
+
+self.reader.addListener(&#x27;iq&#x27;, function receivedIq(data) {
+    //console.log(&#x22;received iq: &#x22; + data);
+    var iqType = data.getAttributeValue(&#x22;type&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendAvailableForChat" id="apidoc.element.node-wa.waApi.prototype.sendAvailableForChat">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailableForChat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendAvailableForChat = function () {
+    var showNode = new ProtocolTreeNode(&#x22;show&#x22;, undefined, undefined, &#x22;chat&#x22;);
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;name&#x22;: this.loginInfo.displayName || &#x22;&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}.bind(self));
+
+self.reader.addListener(&#x27;loggedin&#x27;, function loggedIn(data) {
+    console.log(&#x22;*** Successfully logged in.  Account status: &#x22; + data.getAttributeValue(&#x22;status&#x22;));
+    console.log(&#x22;*** Creation Timestamp: &#x22; + data.getAttributeValue(&#x22;creation&#x22;));
+    console.log(&#x22;*** Expiration Timestamp: &#x22; + data.getAttributeValue(&#x22;expiration&#x22;));
+    self.sendAvailable();
+    self.<span class="apidocCodeKeywordSpan">sendAvailableForChat</span>();
+    self.emit(&#x27;loggedin&#x27;);
+}.bind(self));
+
+self.reader.addListener(&#x27;iq&#x27;, function receivedIq(data) {
+    //console.log(&#x22;received iq: &#x22; + data);
+    var iqType = data.getAttributeValue(&#x22;type&#x22;);
+    var idx = data.getAttributeValue(&#x22;id&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendClientConfig" id="apidoc.element.node-wa.waApi.prototype.sendClientConfig">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClientConfig
+        <span class="apidocSignatureSpan">(sound, pushID, preview, platform)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendClientConfig = function (sound, pushID, preview, platform) {
+    var idx = this.makeId(&#x22;config_&#x22;);
+    var configNode = new ProtocolTreeNode(&#x22;config&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:whatsapp:push&#x22;, &#x22;sound&#x22;: sound, &#x22;id&#x22;: pushID, &#x22;preview&#x22;:
+preview ? &#x22;1&#x22; : &#x22;0&#x22;, &#x22;platform&#x22;: platform });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;set&#x22;, &#x22;to&#x22;: this.loginInfo.domain }, [ configNode ]);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                + &#x27;charset=utf-8&#x27;;
+    console.log(&#x22;response=&#x22; + bigger_response);
+
+    var node = new ProtocolTreeNode(&#x22;response&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:ietf:params:xml:ns:xmpp-sasl&#x22; }, undefined
+, base64.base64.encode(bigger_response));
+    console.log(&#x22;Responding with node: &#x22; + node);
+    self.writer.write(node);
+
+    self.<span class="apidocCodeKeywordSpan">sendClientConfig</span>(&#x27;&#x27;, &#x27;&#x27;, false, &#x27;&#x27;);
+
+}.bind(self));
+
+self.reader.addListener(&#x27;loggedin&#x27;, function loggedIn(data) {
+    console.log(&#x22;*** Successfully logged in.  Account status: &#x22; + data.getAttributeValue(&#x22;status&#x22;));
+    console.log(&#x22;*** Creation Timestamp: &#x22; + data.getAttributeValue(&#x22;creation&#x22;));
+    console.log(&#x22;*** Expiration Timestamp: &#x22; + data.getAttributeValue(&#x22;expiration&#x22;));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendClose" id="apidoc.element.node-wa.waApi.prototype.sendClose">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendClose = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unavailable&#x22; }));
+    // TODO: implement this
+    // this.writer.streamEnd();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster" id="apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeleteFromRoster
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendDeleteFromRoster = function (jid) {
+    var v = this.makeId(&#x22;roster_&#x22;);
+    var child = new ProtocolTreeNode(&#x22;item&#x22;, { jid: jid, subscription: &#x22;remove&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:roster&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { type: &#x22;set&#x22;, id: v }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck" id="apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeliveredReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendDeliveredReceiptAck = function (to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;delivered&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                  latitude: medialatitude, longitude: medialongitude, name: medianame });
+        emitMessage = false;
+    }
+    break;
+case &#x22;received&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; received message &#x22; + msgId);
+    self.emit(&#x27;msgReceived&#x27;, { from: fromAttribute, id: msgId });
+    self.<span class="apidocCodeKeywordSpan">sendDeliveredReceiptAck</span>(fromAttribute, msgId);
+    emitMessage = false;
+    break;
+case &#x22;composing&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; is typing&#x22;);
+    self.emit(&#x27;composing&#x27;, fromAttribute);
+    emitMessage = false;
+    break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList" id="apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetPrivacyList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendGetPrivacyList = function () {
+    var text = this.makeId(&#x22;privacylist_&#x22;);
+    var child = new ProtocolTreeNode(&#x22;list&#x22;, { name: &#x22;default&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:privacy&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { id: text, type: &#x22;get&#x22; }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendGetStatus" id="apidoc.element.node-wa.waApi.prototype.sendGetStatus">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetStatus
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendGetStatus = function (jid) {
+    var num = jid.indexOf(&#x27;@&#x27;);
+    if(num &#x3e; -1) {
+        jid = jid.substring(0, num) + &#x22;@s.us&#x22;;
+    }
+    var v = this.makeId(&#x22;&#x22;);
+    var actionnode = new ProtocolTreeNode(&#x22;action&#x22;, { type: &#x22;get&#x22; });
+    var node = new ProtocolTreeNode(&#x22;message&#x22;, { to: jid, type: &#x22;action&#x22;, id: v }, [ actionnode ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendInactive" id="apidoc.element.node-wa.waApi.prototype.sendInactive">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendInactive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendInactive = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;inactive&#x22; }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendIq" id="apidoc.element.node-wa.waApi.prototype.sendIq">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendIq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendIq = function () {
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;to&#x22;: &#x22;g.us&#x22;, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;id&#x22;: Date.now() + &#x22;-0&#x22; }, undefined, &#x27;expired&#x27;);
+    this.writer.write(node);
+    node = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;to&#x22;: &#x22;s.whatsapp.net&#x22;, &#x22;type&#x22;: &#x22;set&#x22;, &#x22;id&#x22;: Date.now() + &#x22;-1&#x22; }, undefined, &#x27;expired&#x27;);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageReceived" id="apidoc.element.node-wa.waApi.prototype.sendMessageReceived">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageReceived
+        <span class="apidocSignatureSpan">(to, msgid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessageReceived = function (to, msgid) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: msgid }, [ receivedNode ]);
+    this.writer.write(messageNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        console.log(&#x22;*** &#x22; + fromAttribute + &#x22; says: &#x22; + msgdata);
+    }
+    self.emit(&#x27;message&#x27;, messageNode);
+    emitMessage = false;
+    break;
+case &#x22;request&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; requests return receipt&#x22;);
+    self.<span class="apidocCodeKeywordSpan">sendMessageReceived</span>(fromAttribute, msgId);
+    emitMessage = false;
+    break;
+case &#x22;notify&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; sets notify_name=&#x22; + messageChildren[childNode].getAttributeValue
+(&#x22;name&#x22;));
+    visibleName = messageChildren[childNode].getAttributeValue(&#x22;name&#x22;);
+    break;
+case &#x22;server&#x22;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithBody" id="apidoc.element.node-wa.waApi.prototype.sendMessageWithBody">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithBody
+        <span class="apidocSignatureSpan">(fmsg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessageWithBody = function (fmsg) {
+    var bodyNode = new ProtocolTreeNode(&#x22;body&#x22;, undefined, undefined, fmsg.content);
+    this.writer.write(this.getMessageNode(fmsg, bodyNode));
+    this.msgId++;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+waApi.prototype.sendAvailable = function() {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;available&#x22; });
+    this.writer.write(presenceNode);
+}
+
+// This might work. I can&#x27;t see any changes from Android, but other people are reporting that they see a status update.
+waApi.prototype.sendStatusUpdate = function(status) {
+    this.<span class="apidocCodeKeywordSpan">sendMessageWithBody</span>({ to: &#x22;s.us&#x22;, content: status });
+}
+
+// TODO: use sendUnavailable
+waApi.prototype.sendUnavailable = function(status) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;unavailable&#x22; });
+    this.writer.write(presenceNode);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia" id="apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithMedia
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessageWithMedia = function () {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendNotificationReceived" id="apidoc.element.node-wa.waApi.prototype.sendNotificationReceived">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendNotificationReceived
+        <span class="apidocSignatureSpan">(jid, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendNotificationReceived = function (jid, id) {
+    var child = new ProtocolTreeNode(&#x22;received&#x22;, { xmlns: &#x22;urn:xmpp:receipts&#x22; });
+    var node = new ProtocolTreeNode(&#x22;message&#x22;, { to: jid, type: &#x22;notification&#x22;, id: id }, [ child ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendPaused" id="apidoc.element.node-wa.waApi.prototype.sendPaused">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPaused
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendPaused = function (jid) {
+    console.log(&#x22;*** Paused&#x22;);
+    var composing = new ProtocolTreeNode(&#x22;paused&#x22;, { &#x22;xmlns&#x22;: &#x22;http://jabber.org/protocol/chatstates&#x22; });
+    var message = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: jid, &#x22;type&#x22;: &#x22;chat&#x22; }, [ composing ]);
+    this.writer.write(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest" id="apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPresenceSubscriptionRequest
+        <span class="apidocSignatureSpan">(to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendPresenceSubscriptionRequest = function (to) {
+    var node = new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;subscribe&#x22;, to: to });
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendRelayComplete" id="apidoc.element.node-wa.waApi.prototype.sendRelayComplete">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayComplete
+        <span class="apidocSignatureSpan">(id, ms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendRelayComplete = function (id, ms) {
+    var child = new ProtocolTreeNode(&#x22;relay&#x22;, { elapsed: ms });
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { xmlns: &#x22;w:p:r&#x22;, type: &#x22;result&#x22;, to: &#x22;s.whatsapp.net&#x22;, id: id }, [ child ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendRelayTimeout" id="apidoc.element.node-wa.waApi.prototype.sendRelayTimeout">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayTimeout
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendRelayTimeout = function (id) {
+    var child = new ProtocolTreeNode(&#x22;remote-server-timeout&#x22;, { xmlns: &#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;error&#x22;, { code: &#x22;504&#x22;, type: &#x22;wait&#x22; }, [ child ] );
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { xmlns: &#x22;w:p:r&#x22;, type: &#x22;error&#x22;, to: &#x22;s.whatsapp.net&#x22;, id: id }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList" id="apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSetPrivacyBlockedList
+        <span class="apidocSignatureSpan">(jidList)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSetPrivacyBlockedList = function (jidList) {
+    var listnodes = [];
+    for(var x = 0; x &#x3c; jidList.length; x++) {
+        listnodes.push(new ProtocolTreeNode(&#x22;item&#x22;, { type: &#x22;jid&#x22;, value: jidList[x], action: &#x22;deny&#x22;, order: x }));
+    }
+    var child = new ProtocolTreeNode(&#x22;list&#x22;, { name: &#x22;default&#x22; }, listnodes);
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:privacy&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { id: text, type: &#x22;set&#x22; }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendStatusUpdate" id="apidoc.element.node-wa.waApi.prototype.sendStatusUpdate">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendStatusUpdate
+        <span class="apidocSignatureSpan">(status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendStatusUpdate = function (status) {
+    this.sendMessageWithBody({ to: &#x22;s.us&#x22;, content: status });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSubjectReceived" id="apidoc.element.node-wa.waApi.prototype.sendSubjectReceived">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubjectReceived
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSubjectReceived = function (to, msgId) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = this.getSubjectMessage(to, msgId, receivedNode);
+    this.writer.write(messageNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            break;
+        }
+    }
+    var bodyNode = messageNode.getChild(&#x22;body&#x22;);
+    var newSubject = bodyNode ? bodyNode.data : undefined;
+    console.log(&#x22;*** Subject received: &#x22; + newSubject);
+    if(receiptRequested) {
+        self.<span class="apidocCodeKeywordSpan">sendSubjectReceived</span>(fromAttribute, msgId);
+    }
+} else if(typeAttribute == &#x22;notification&#x22;) {
+    // TODO: I don&#x27;t see a &#x22;notification&#x22; type in here anywhere, what&#x27;s it do?
+} else if(typeAttribute == &#x22;chat&#x22;) {
+    var duplicate = false;
+    var wantsReceipt = false;
+    var messageChildren = messageNode.children || [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSubscribe" id="apidoc.element.node-wa.waApi.prototype.sendSubscribe">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubscribe
+        <span class="apidocSignatureSpan">(to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSubscribe = function (to) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;subscribe&#x22;, &#x22;to&#x22;: to });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //    idx = this.iqId.toString(16);
+    //}
+    return idx;
+}
+
+// TODO: use getLastOnline
+waApi.prototype.getLastOnline = function(jid) {
+    this.<span class="apidocCodeKeywordSpan">sendSubscribe</span>(jid);
+    var idx = this.makeId(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;:
+jid }, [query]);
+    this.writer.write(iqNode);
+}
+
+// TODO: use sendIq?
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendTyping" id="apidoc.element.node-wa.waApi.prototype.sendTyping">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendTyping
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendTyping = function (jid) {
+    console.log(&#x22;*** Typing&#x22;);
+    var composing = new ProtocolTreeNode(&#x22;composing&#x22;, { &#x22;xmlns&#x22;: &#x22;http://jabber.org/protocol/chatstates&#x22; });
+    var message = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: jid, &#x22;type&#x22;: &#x22;chat&#x22; }, [ composing ]);
+    this.writer.write(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnavailable" id="apidoc.element.node-wa.waApi.prototype.sendUnavailable">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnavailable
+        <span class="apidocSignatureSpan">(status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendUnavailable = function (status) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;unavailable&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim" id="apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeHim
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendUnsubscribeHim = function (jid) {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unsubscribed&#x22;, to: jid }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe" id="apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeMe
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendUnsubscribeMe = function (jid) {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unsubscribe&#x22;, to: jid }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck" id="apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendVisibleReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendVisibleReceiptAck = function (to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;visible&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.getLastOnline" id="apidoc.module.node-wa.waApi.prototype.getLastOnline">module node-wa.waApi.prototype.getLastOnline</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getLastOnline.getLastOnline" id="apidoc.element.node-wa.waApi.prototype.getLastOnline.getLastOnline">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getLastOnline
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastOnline = function (jid) {
+    this.sendSubscribe(jid);
+    var idx = this.makeId(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;: jid }, [query]);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.getMessageNode" id="apidoc.module.node-wa.waApi.prototype.getMessageNode">module node-wa.waApi.prototype.getMessageNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getMessageNode.getMessageNode" id="apidoc.element.node-wa.waApi.prototype.getMessageNode.getMessageNode">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getMessageNode
+        <span class="apidocSignatureSpan">(fmsg, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMessageNode = function (fmsg, child) {
+    var requestNode = undefined;
+    var serverNode = new ProtocolTreeNode(&#x22;server&#x22;);
+    var xNode = new ProtocolTreeNode(&#x22;x&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:x:event&#x22; }, [ serverNode ]);
+    var childCount = (requestNode ? 1 : 0) + 2;
+    var messageChildren = [];
+    var i = 0;
+    if(requestNode) {
+        messageChildren[i] = requestNode;
+        i++;
+    }
+    messageChildren[i] = xNode;
+    i++;
+    messageChildren[i] = child;
+    i++;
+    //var key = fmsg.key; // eval(fmsg.key) ???
+    var key = { id: Math.round(Date.now() / 1000) + &#x22;-1&#x22; };
+    //var key = { id: &#x22;123456789-3&#x22; };
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: fmsg.to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: key.id }, messageChildren);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //var key = { id: &#x22;123456789-3&#x22; };
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: fmsg.to, &#x22;type&#x22;: &#x22;chat&#x22;, &#
+x22;id&#x22;: key.id }, messageChildren);
+    return messageNode;
+}
+
+waApi.prototype.sendMessageWithBody = function(fmsg) {
+    var bodyNode = new ProtocolTreeNode(&#x22;body&#x22;, undefined, undefined, fmsg.content);
+    this.writer.write(this.<span class="apidocCodeKeywordSpan">getMessageNode</span>(fmsg, bodyNode));
+    this.msgId++;
+}
+
+waApi.prototype.sendMessageWithMedia = function() {
+
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.getReceiptAck" id="apidoc.module.node-wa.waApi.prototype.getReceiptAck">module node-wa.waApi.prototype.getReceiptAck</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getReceiptAck.getReceiptAck" id="apidoc.element.node-wa.waApi.prototype.getReceiptAck.getReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId, receiptType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getReceiptAck = function (to, msgId, receiptType) {
+    var ackNode = new ProtocolTreeNode(&#x22;ack&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22;, &#x22;type&#x22;: receiptType });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: msgId }, [ ackNode ]);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+waApi.prototype.sendMessageReceived = function(to, msgid) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;
+id&#x22;: msgid }, [ receivedNode ]);
+    this.writer.write(messageNode);
+}
+
+waApi.prototype.sendDeliveredReceiptAck = function(to, msgId) {
+    this.writer.write(this.<span class="apidocCodeKeywordSpan">getReceiptAck</span>(to, msgId, &#x22;delivered&#x22;));
+}
+
+// TODO: use sendVisibileReceiptAck
+waApi.prototype.sendVisibleReceiptAck = function(to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;visible&#x22;));
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.getSubjectMessage" id="apidoc.module.node-wa.waApi.prototype.getSubjectMessage">module node-wa.waApi.prototype.getSubjectMessage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.getSubjectMessage.getSubjectMessage" id="apidoc.element.node-wa.waApi.prototype.getSubjectMessage.getSubjectMessage">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>getSubjectMessage
+        <span class="apidocSignatureSpan">(to, msgId, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSubjectMessage = function (to, msgId, child) {
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;subject&#x22;, &#x22;id&#x22;: msgId }, [ child ]);
+    return messageNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+waApi.prototype.getSubjectMessage = function(to, msgId, child) {
+var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;subject&#x22;, &#x22;id
+&#x22;: msgId }, [ child ]);
+return messageNode;
+}
+
+waApi.prototype.sendSubjectReceived = function(to, msgId) {
+var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+var messageNode = this.<span class="apidocCodeKeywordSpan">getSubjectMessage</span>(to, msgId, receivedNode);
+this.writer.write(messageNode);
+}
+
+waApi.prototype.sendMessageReceived = function(to, msgid) {
+var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#
+x22;: msgid }, [ receivedNode ]);
+this.writer.write(messageNode);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.handlePing" id="apidoc.module.node-wa.waApi.prototype.handlePing">module node-wa.waApi.prototype.handlePing</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.handlePing.handlePing" id="apidoc.element.node-wa.waApi.prototype.handlePing.handlePing">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>handlePing
+        <span class="apidocSignatureSpan">(idx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handlePing = function (idx) {
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;type&#x22;: &#x22;result&#x22;, &#x22;to&#x22;: this.loginInfo.domain, &#x22;id&#x22;: idx });
+    console.log(&#x22;received ping &#x22; + idx + &#x22;, sending Pong &#x22; + iqNode);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if(!iqType) {
+        throw(&#x22;received iq with no type, data=&#x22; + data);
+    }
+    switch(iqType) {
+        case &#x22;get&#x22;:
+            var childNode = data.getChild(0);
+            if(childNode.tag === &#x22;ping&#x22;) {
+                self.<span class="apidocCodeKeywordSpan">handlePing</span>(idx);
+            }
+            break;
+        case &#x22;error&#x22;:
+/*
+&#x3c;iq from=&#x22;+9597896522@s.whatsapp.net&#x22; id=&#x22;last_14&#x22; type=&#x22;error&#x22;&#x3e;
+&#x3c;error code=&#x22;404&#x22; type=&#x22;cancel&#x22;&#x3e;
+&#x3c;item-not-found xmlns=&#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22;&#x3e;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.makeId" id="apidoc.module.node-wa.waApi.prototype.makeId">module node-wa.waApi.prototype.makeId</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.makeId.makeId" id="apidoc.element.node-wa.waApi.prototype.makeId.makeId">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>makeId
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeId = function (prefix) {
+    this.iqId++;
+    var idx = &#x22;&#x22;;
+    //if(this.verbose) {
+        idx += prefix + this.iqId;
+    //} else {
+    //    idx = this.iqId.toString(16);
+    //}
+    return idx;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //}
+    return idx;
+}
+
+// TODO: use getLastOnline
+waApi.prototype.getLastOnline = function(jid) {
+    this.sendSubscribe(jid);
+    var idx = this.<span class="apidocCodeKeywordSpan">makeId</span>(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;:
+jid }, [query]);
+    this.writer.write(iqNode);
+}
+
+// TODO: use sendIq?
+waApi.prototype.sendIq = function() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendActive" id="apidoc.module.node-wa.waApi.prototype.sendActive">module node-wa.waApi.prototype.sendActive</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendActive.sendActive" id="apidoc.element.node-wa.waApi.prototype.sendActive.sendActive">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendActive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendActive = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;active&#x22; }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendAvailable" id="apidoc.module.node-wa.waApi.prototype.sendAvailable">module node-wa.waApi.prototype.sendAvailable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendAvailable.sendAvailable" id="apidoc.element.node-wa.waApi.prototype.sendAvailable.sendAvailable">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendAvailable = function () {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;available&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+}.bind(self));
+
+self.reader.addListener(&#x27;loggedin&#x27;, function loggedIn(data) {
+    console.log(&#x22;*** Successfully logged in.  Account status: &#x22; + data.getAttributeValue(&#x22;status&#x22;));
+    console.log(&#x22;*** Creation Timestamp: &#x22; + data.getAttributeValue(&#x22;creation&#x22;));
+    console.log(&#x22;*** Expiration Timestamp: &#x22; + data.getAttributeValue(&#x22;expiration&#x22;));
+    self.<span class="apidocCodeKeywordSpan">sendAvailable</span>();
+    self.sendAvailableForChat();
+    self.emit(&#x27;loggedin&#x27;);
+}.bind(self));
+
+self.reader.addListener(&#x27;iq&#x27;, function receivedIq(data) {
+    //console.log(&#x22;received iq: &#x22; + data);
+    var iqType = data.getAttributeValue(&#x22;type&#x22;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendAvailableForChat" id="apidoc.module.node-wa.waApi.prototype.sendAvailableForChat">module node-wa.waApi.prototype.sendAvailableForChat</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendAvailableForChat.sendAvailableForChat" id="apidoc.element.node-wa.waApi.prototype.sendAvailableForChat.sendAvailableForChat">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendAvailableForChat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendAvailableForChat = function () {
+    var showNode = new ProtocolTreeNode(&#x22;show&#x22;, undefined, undefined, &#x22;chat&#x22;);
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;name&#x22;: this.loginInfo.displayName || &#x22;&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}.bind(self));
+
+self.reader.addListener(&#x27;loggedin&#x27;, function loggedIn(data) {
+    console.log(&#x22;*** Successfully logged in.  Account status: &#x22; + data.getAttributeValue(&#x22;status&#x22;));
+    console.log(&#x22;*** Creation Timestamp: &#x22; + data.getAttributeValue(&#x22;creation&#x22;));
+    console.log(&#x22;*** Expiration Timestamp: &#x22; + data.getAttributeValue(&#x22;expiration&#x22;));
+    self.sendAvailable();
+    self.<span class="apidocCodeKeywordSpan">sendAvailableForChat</span>();
+    self.emit(&#x27;loggedin&#x27;);
+}.bind(self));
+
+self.reader.addListener(&#x27;iq&#x27;, function receivedIq(data) {
+    //console.log(&#x22;received iq: &#x22; + data);
+    var iqType = data.getAttributeValue(&#x22;type&#x22;);
+    var idx = data.getAttributeValue(&#x22;id&#x22;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendClientConfig" id="apidoc.module.node-wa.waApi.prototype.sendClientConfig">module node-wa.waApi.prototype.sendClientConfig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendClientConfig.sendClientConfig" id="apidoc.element.node-wa.waApi.prototype.sendClientConfig.sendClientConfig">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClientConfig
+        <span class="apidocSignatureSpan">(sound, pushID, preview, platform)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendClientConfig = function (sound, pushID, preview, platform) {
+    var idx = this.makeId(&#x22;config_&#x22;);
+    var configNode = new ProtocolTreeNode(&#x22;config&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:whatsapp:push&#x22;, &#x22;sound&#x22;: sound, &#x22;id&#x22;: pushID, &#x22;preview&#x22;:
+preview ? &#x22;1&#x22; : &#x22;0&#x22;, &#x22;platform&#x22;: platform });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;set&#x22;, &#x22;to&#x22;: this.loginInfo.domain }, [ configNode ]);
+    this.writer.write(iqNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                + &#x27;charset=utf-8&#x27;;
+    console.log(&#x22;response=&#x22; + bigger_response);
+
+    var node = new ProtocolTreeNode(&#x22;response&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:ietf:params:xml:ns:xmpp-sasl&#x22; }, undefined
+, base64.base64.encode(bigger_response));
+    console.log(&#x22;Responding with node: &#x22; + node);
+    self.writer.write(node);
+
+    self.<span class="apidocCodeKeywordSpan">sendClientConfig</span>(&#x27;&#x27;, &#x27;&#x27;, false, &#x27;&#x27;);
+
+}.bind(self));
+
+self.reader.addListener(&#x27;loggedin&#x27;, function loggedIn(data) {
+    console.log(&#x22;*** Successfully logged in.  Account status: &#x22; + data.getAttributeValue(&#x22;status&#x22;));
+    console.log(&#x22;*** Creation Timestamp: &#x22; + data.getAttributeValue(&#x22;creation&#x22;));
+    console.log(&#x22;*** Expiration Timestamp: &#x22; + data.getAttributeValue(&#x22;expiration&#x22;));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendClose" id="apidoc.module.node-wa.waApi.prototype.sendClose">module node-wa.waApi.prototype.sendClose</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendClose.sendClose" id="apidoc.element.node-wa.waApi.prototype.sendClose.sendClose">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendClose = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unavailable&#x22; }));
+    // TODO: implement this
+    // this.writer.streamEnd();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendDeleteFromRoster" id="apidoc.module.node-wa.waApi.prototype.sendDeleteFromRoster">module node-wa.waApi.prototype.sendDeleteFromRoster</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster.sendDeleteFromRoster" id="apidoc.element.node-wa.waApi.prototype.sendDeleteFromRoster.sendDeleteFromRoster">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeleteFromRoster
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendDeleteFromRoster = function (jid) {
+    var v = this.makeId(&#x22;roster_&#x22;);
+    var child = new ProtocolTreeNode(&#x22;item&#x22;, { jid: jid, subscription: &#x22;remove&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:roster&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { type: &#x22;set&#x22;, id: v }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendDeliveredReceiptAck" id="apidoc.module.node-wa.waApi.prototype.sendDeliveredReceiptAck">module node-wa.waApi.prototype.sendDeliveredReceiptAck</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck.sendDeliveredReceiptAck" id="apidoc.element.node-wa.waApi.prototype.sendDeliveredReceiptAck.sendDeliveredReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendDeliveredReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendDeliveredReceiptAck = function (to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;delivered&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                  latitude: medialatitude, longitude: medialongitude, name: medianame });
+        emitMessage = false;
+    }
+    break;
+case &#x22;received&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; received message &#x22; + msgId);
+    self.emit(&#x27;msgReceived&#x27;, { from: fromAttribute, id: msgId });
+    self.<span class="apidocCodeKeywordSpan">sendDeliveredReceiptAck</span>(fromAttribute, msgId);
+    emitMessage = false;
+    break;
+case &#x22;composing&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; is typing&#x22;);
+    self.emit(&#x27;composing&#x27;, fromAttribute);
+    emitMessage = false;
+    break;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendGetPrivacyList" id="apidoc.module.node-wa.waApi.prototype.sendGetPrivacyList">module node-wa.waApi.prototype.sendGetPrivacyList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList.sendGetPrivacyList" id="apidoc.element.node-wa.waApi.prototype.sendGetPrivacyList.sendGetPrivacyList">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetPrivacyList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendGetPrivacyList = function () {
+    var text = this.makeId(&#x22;privacylist_&#x22;);
+    var child = new ProtocolTreeNode(&#x22;list&#x22;, { name: &#x22;default&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:privacy&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { id: text, type: &#x22;get&#x22; }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendGetStatus" id="apidoc.module.node-wa.waApi.prototype.sendGetStatus">module node-wa.waApi.prototype.sendGetStatus</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendGetStatus.sendGetStatus" id="apidoc.element.node-wa.waApi.prototype.sendGetStatus.sendGetStatus">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendGetStatus
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendGetStatus = function (jid) {
+    var num = jid.indexOf(&#x27;@&#x27;);
+    if(num &#x3e; -1) {
+        jid = jid.substring(0, num) + &#x22;@s.us&#x22;;
+    }
+    var v = this.makeId(&#x22;&#x22;);
+    var actionnode = new ProtocolTreeNode(&#x22;action&#x22;, { type: &#x22;get&#x22; });
+    var node = new ProtocolTreeNode(&#x22;message&#x22;, { to: jid, type: &#x22;action&#x22;, id: v }, [ actionnode ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendInactive" id="apidoc.module.node-wa.waApi.prototype.sendInactive">module node-wa.waApi.prototype.sendInactive</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendInactive.sendInactive" id="apidoc.element.node-wa.waApi.prototype.sendInactive.sendInactive">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendInactive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendInactive = function () {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;inactive&#x22; }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendIq" id="apidoc.module.node-wa.waApi.prototype.sendIq">module node-wa.waApi.prototype.sendIq</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendIq.sendIq" id="apidoc.element.node-wa.waApi.prototype.sendIq.sendIq">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendIq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendIq = function () {
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;to&#x22;: &#x22;g.us&#x22;, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;id&#x22;: Date.now() + &#x22;-0&#x22; }, undefined, &#x27;expired&#x27;);
+    this.writer.write(node);
+    node = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;to&#x22;: &#x22;s.whatsapp.net&#x22;, &#x22;type&#x22;: &#x22;set&#x22;, &#x22;id&#x22;: Date.now() + &#x22;-1&#x22; }, undefined, &#x27;expired&#x27;);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendMessageReceived" id="apidoc.module.node-wa.waApi.prototype.sendMessageReceived">module node-wa.waApi.prototype.sendMessageReceived</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageReceived.sendMessageReceived" id="apidoc.element.node-wa.waApi.prototype.sendMessageReceived.sendMessageReceived">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageReceived
+        <span class="apidocSignatureSpan">(to, msgid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessageReceived = function (to, msgid) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: to, &#x22;type&#x22;: &#x22;chat&#x22;, &#x22;id&#x22;: msgid }, [ receivedNode ]);
+    this.writer.write(messageNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        console.log(&#x22;*** &#x22; + fromAttribute + &#x22; says: &#x22; + msgdata);
+    }
+    self.emit(&#x27;message&#x27;, messageNode);
+    emitMessage = false;
+    break;
+case &#x22;request&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; requests return receipt&#x22;);
+    self.<span class="apidocCodeKeywordSpan">sendMessageReceived</span>(fromAttribute, msgId);
+    emitMessage = false;
+    break;
+case &#x22;notify&#x22;:
+    console.log(&#x22;*** &#x22; + fromAttribute + &#x22; sets notify_name=&#x22; + messageChildren[childNode].getAttributeValue
+(&#x22;name&#x22;));
+    visibleName = messageChildren[childNode].getAttributeValue(&#x22;name&#x22;);
+    break;
+case &#x22;server&#x22;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendMessageWithBody" id="apidoc.module.node-wa.waApi.prototype.sendMessageWithBody">module node-wa.waApi.prototype.sendMessageWithBody</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithBody.sendMessageWithBody" id="apidoc.element.node-wa.waApi.prototype.sendMessageWithBody.sendMessageWithBody">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithBody
+        <span class="apidocSignatureSpan">(fmsg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessageWithBody = function (fmsg) {
+    var bodyNode = new ProtocolTreeNode(&#x22;body&#x22;, undefined, undefined, fmsg.content);
+    this.writer.write(this.getMessageNode(fmsg, bodyNode));
+    this.msgId++;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+waApi.prototype.sendAvailable = function() {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;available&#x22; });
+    this.writer.write(presenceNode);
+}
+
+// This might work. I can&#x27;t see any changes from Android, but other people are reporting that they see a status update.
+waApi.prototype.sendStatusUpdate = function(status) {
+    this.<span class="apidocCodeKeywordSpan">sendMessageWithBody</span>({ to: &#x22;s.us&#x22;, content: status });
+}
+
+// TODO: use sendUnavailable
+waApi.prototype.sendUnavailable = function(status) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;unavailable&#x22; });
+    this.writer.write(presenceNode);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendMessageWithMedia" id="apidoc.module.node-wa.waApi.prototype.sendMessageWithMedia">module node-wa.waApi.prototype.sendMessageWithMedia</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia.sendMessageWithMedia" id="apidoc.element.node-wa.waApi.prototype.sendMessageWithMedia.sendMessageWithMedia">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendMessageWithMedia
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessageWithMedia = function () {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendNotificationReceived" id="apidoc.module.node-wa.waApi.prototype.sendNotificationReceived">module node-wa.waApi.prototype.sendNotificationReceived</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendNotificationReceived.sendNotificationReceived" id="apidoc.element.node-wa.waApi.prototype.sendNotificationReceived.sendNotificationReceived">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendNotificationReceived
+        <span class="apidocSignatureSpan">(jid, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendNotificationReceived = function (jid, id) {
+    var child = new ProtocolTreeNode(&#x22;received&#x22;, { xmlns: &#x22;urn:xmpp:receipts&#x22; });
+    var node = new ProtocolTreeNode(&#x22;message&#x22;, { to: jid, type: &#x22;notification&#x22;, id: id }, [ child ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendPaused" id="apidoc.module.node-wa.waApi.prototype.sendPaused">module node-wa.waApi.prototype.sendPaused</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendPaused.sendPaused" id="apidoc.element.node-wa.waApi.prototype.sendPaused.sendPaused">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPaused
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendPaused = function (jid) {
+    console.log(&#x22;*** Paused&#x22;);
+    var composing = new ProtocolTreeNode(&#x22;paused&#x22;, { &#x22;xmlns&#x22;: &#x22;http://jabber.org/protocol/chatstates&#x22; });
+    var message = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: jid, &#x22;type&#x22;: &#x22;chat&#x22; }, [ composing ]);
+    this.writer.write(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendPresenceSubscriptionRequest" id="apidoc.module.node-wa.waApi.prototype.sendPresenceSubscriptionRequest">module node-wa.waApi.prototype.sendPresenceSubscriptionRequest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest.sendPresenceSubscriptionRequest" id="apidoc.element.node-wa.waApi.prototype.sendPresenceSubscriptionRequest.sendPresenceSubscriptionRequest">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendPresenceSubscriptionRequest
+        <span class="apidocSignatureSpan">(to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendPresenceSubscriptionRequest = function (to) {
+    var node = new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;subscribe&#x22;, to: to });
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendRelayComplete" id="apidoc.module.node-wa.waApi.prototype.sendRelayComplete">module node-wa.waApi.prototype.sendRelayComplete</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendRelayComplete.sendRelayComplete" id="apidoc.element.node-wa.waApi.prototype.sendRelayComplete.sendRelayComplete">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayComplete
+        <span class="apidocSignatureSpan">(id, ms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendRelayComplete = function (id, ms) {
+    var child = new ProtocolTreeNode(&#x22;relay&#x22;, { elapsed: ms });
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { xmlns: &#x22;w:p:r&#x22;, type: &#x22;result&#x22;, to: &#x22;s.whatsapp.net&#x22;, id: id }, [ child ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendRelayTimeout" id="apidoc.module.node-wa.waApi.prototype.sendRelayTimeout">module node-wa.waApi.prototype.sendRelayTimeout</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendRelayTimeout.sendRelayTimeout" id="apidoc.element.node-wa.waApi.prototype.sendRelayTimeout.sendRelayTimeout">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendRelayTimeout
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendRelayTimeout = function (id) {
+    var child = new ProtocolTreeNode(&#x22;remote-server-timeout&#x22;, { xmlns: &#x22;urn:ietf:params:xml:ns:xmpp-stanzas&#x22; });
+    var child2 = new ProtocolTreeNode(&#x22;error&#x22;, { code: &#x22;504&#x22;, type: &#x22;wait&#x22; }, [ child ] );
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { xmlns: &#x22;w:p:r&#x22;, type: &#x22;error&#x22;, to: &#x22;s.whatsapp.net&#x22;, id: id }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendSetPrivacyBlockedList" id="apidoc.module.node-wa.waApi.prototype.sendSetPrivacyBlockedList">module node-wa.waApi.prototype.sendSetPrivacyBlockedList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList.sendSetPrivacyBlockedList" id="apidoc.element.node-wa.waApi.prototype.sendSetPrivacyBlockedList.sendSetPrivacyBlockedList">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSetPrivacyBlockedList
+        <span class="apidocSignatureSpan">(jidList)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSetPrivacyBlockedList = function (jidList) {
+    var listnodes = [];
+    for(var x = 0; x &#x3c; jidList.length; x++) {
+        listnodes.push(new ProtocolTreeNode(&#x22;item&#x22;, { type: &#x22;jid&#x22;, value: jidList[x], action: &#x22;deny&#x22;, order: x }));
+    }
+    var child = new ProtocolTreeNode(&#x22;list&#x22;, { name: &#x22;default&#x22; }, listnodes);
+    var child2 = new ProtocolTreeNode(&#x22;query&#x22;, { xmlns: &#x22;jabber:iq:privacy&#x22; }, [ child ]);
+    var node = new ProtocolTreeNode(&#x22;iq&#x22;, { id: text, type: &#x22;set&#x22; }, [ child2 ]);
+    this.writer.write(node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendStatusUpdate" id="apidoc.module.node-wa.waApi.prototype.sendStatusUpdate">module node-wa.waApi.prototype.sendStatusUpdate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendStatusUpdate.sendStatusUpdate" id="apidoc.element.node-wa.waApi.prototype.sendStatusUpdate.sendStatusUpdate">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendStatusUpdate
+        <span class="apidocSignatureSpan">(status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendStatusUpdate = function (status) {
+    this.sendMessageWithBody({ to: &#x22;s.us&#x22;, content: status });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendSubjectReceived" id="apidoc.module.node-wa.waApi.prototype.sendSubjectReceived">module node-wa.waApi.prototype.sendSubjectReceived</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSubjectReceived.sendSubjectReceived" id="apidoc.element.node-wa.waApi.prototype.sendSubjectReceived.sendSubjectReceived">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubjectReceived
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSubjectReceived = function (to, msgId) {
+    var receivedNode = new ProtocolTreeNode(&#x22;received&#x22;, { &#x22;xmlns&#x22;: &#x22;urn:xmpp:receipts&#x22; });
+    var messageNode = this.getSubjectMessage(to, msgId, receivedNode);
+    this.writer.write(messageNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            break;
+        }
+    }
+    var bodyNode = messageNode.getChild(&#x22;body&#x22;);
+    var newSubject = bodyNode ? bodyNode.data : undefined;
+    console.log(&#x22;*** Subject received: &#x22; + newSubject);
+    if(receiptRequested) {
+        self.<span class="apidocCodeKeywordSpan">sendSubjectReceived</span>(fromAttribute, msgId);
+    }
+} else if(typeAttribute == &#x22;notification&#x22;) {
+    // TODO: I don&#x27;t see a &#x22;notification&#x22; type in here anywhere, what&#x27;s it do?
+} else if(typeAttribute == &#x22;chat&#x22;) {
+    var duplicate = false;
+    var wantsReceipt = false;
+    var messageChildren = messageNode.children || [];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendSubscribe" id="apidoc.module.node-wa.waApi.prototype.sendSubscribe">module node-wa.waApi.prototype.sendSubscribe</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendSubscribe.sendSubscribe" id="apidoc.element.node-wa.waApi.prototype.sendSubscribe.sendSubscribe">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendSubscribe
+        <span class="apidocSignatureSpan">(to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSubscribe = function (to) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;subscribe&#x22;, &#x22;to&#x22;: to });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //    idx = this.iqId.toString(16);
+    //}
+    return idx;
+}
+
+// TODO: use getLastOnline
+waApi.prototype.getLastOnline = function(jid) {
+    this.<span class="apidocCodeKeywordSpan">sendSubscribe</span>(jid);
+    var idx = this.makeId(&#x22;last_&#x22;);
+    var query = new ProtocolTreeNode(&#x22;query&#x22;, { &#x22;xmlns&#x22;:&#x22;jabber:iq:last&#x22; });
+    var iqNode = new ProtocolTreeNode(&#x22;iq&#x22;, { &#x22;id&#x22;: idx, &#x22;type&#x22;: &#x22;get&#x22;, &#x22;to&#x22;:
+jid }, [query]);
+    this.writer.write(iqNode);
+}
+
+// TODO: use sendIq?
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendTyping" id="apidoc.module.node-wa.waApi.prototype.sendTyping">module node-wa.waApi.prototype.sendTyping</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendTyping.sendTyping" id="apidoc.element.node-wa.waApi.prototype.sendTyping.sendTyping">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendTyping
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendTyping = function (jid) {
+    console.log(&#x22;*** Typing&#x22;);
+    var composing = new ProtocolTreeNode(&#x22;composing&#x22;, { &#x22;xmlns&#x22;: &#x22;http://jabber.org/protocol/chatstates&#x22; });
+    var message = new ProtocolTreeNode(&#x22;message&#x22;, { &#x22;to&#x22;: jid, &#x22;type&#x22;: &#x22;chat&#x22; }, [ composing ]);
+    this.writer.write(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendUnavailable" id="apidoc.module.node-wa.waApi.prototype.sendUnavailable">module node-wa.waApi.prototype.sendUnavailable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnavailable.sendUnavailable" id="apidoc.element.node-wa.waApi.prototype.sendUnavailable.sendUnavailable">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnavailable
+        <span class="apidocSignatureSpan">(status)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendUnavailable = function (status) {
+    var presenceNode = new ProtocolTreeNode(&#x22;presence&#x22;, { &#x22;type&#x22;: &#x22;unavailable&#x22; });
+    this.writer.write(presenceNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendUnsubscribeHim" id="apidoc.module.node-wa.waApi.prototype.sendUnsubscribeHim">module node-wa.waApi.prototype.sendUnsubscribeHim</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim.sendUnsubscribeHim" id="apidoc.element.node-wa.waApi.prototype.sendUnsubscribeHim.sendUnsubscribeHim">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeHim
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendUnsubscribeHim = function (jid) {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unsubscribed&#x22;, to: jid }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendUnsubscribeMe" id="apidoc.module.node-wa.waApi.prototype.sendUnsubscribeMe">module node-wa.waApi.prototype.sendUnsubscribeMe</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe.sendUnsubscribeMe" id="apidoc.element.node-wa.waApi.prototype.sendUnsubscribeMe.sendUnsubscribeMe">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendUnsubscribeMe
+        <span class="apidocSignatureSpan">(jid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendUnsubscribeMe = function (jid) {
+    this.writer.write(new ProtocolTreeNode(&#x22;presence&#x22;, { type: &#x22;unsubscribe&#x22;, to: jid }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.waApi.prototype.sendVisibleReceiptAck" id="apidoc.module.node-wa.waApi.prototype.sendVisibleReceiptAck">module node-wa.waApi.prototype.sendVisibleReceiptAck</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck.sendVisibleReceiptAck" id="apidoc.element.node-wa.waApi.prototype.sendVisibleReceiptAck.sendVisibleReceiptAck">
+        function <span class="apidocSignatureSpan">node-wa.waApi.prototype.</span>sendVisibleReceiptAck
+        <span class="apidocSignatureSpan">(to, msgId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendVisibleReceiptAck = function (to, msgId) {
+    this.writer.write(this.getReceiptAck(to, msgId, &#x22;visible&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-wa.whatsapp" id="apidoc.module.node-wa.whatsapp">module node-wa.whatsapp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.whatsapp.BinTreeNodeReader" id="apidoc.element.node-wa.whatsapp.BinTreeNodeReader">
+        function <span class="apidocSignatureSpan">node-wa.whatsapp.</span>BinTreeNodeReader
+        <span class="apidocSignatureSpan">(inputstream, dictionary, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">BinTreeNodeReader = function (inputstream, dictionary, opt) {
+    this.debug = opt ? opt.debug : false;
+    this.tokenMap = dictionary;
+    this.rawIn = inputstream;
+    this.inn = new Buffer(0);
+    this.buf = new Buffer(1024);
+    this.bufSize = 0;
+    this.readSize = 1;
+    this.innPointer = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.whatsapp.BinTreeNodeWriter" id="apidoc.element.node-wa.whatsapp.BinTreeNodeWriter">
+        function <span class="apidocSignatureSpan">node-wa.whatsapp.</span>BinTreeNodeWriter
+        <span class="apidocSignatureSpan">(outputstream, dictionary, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">BinTreeNodeWriter = function (outputstream, dictionary, opt) {
+    this.debug = opt ? opt.debug : false;
+    this.realOut = outputstream;
+    this.tokenMap = {};
+    this.out = new Buffer(&#x22;&#x22;);
+    for(var i = 0; i &#x3c; dictionary.length; i++) {
+        if(dictionary[i]) {
+            this.tokenMap[dictionary[i]] = i;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-wa.whatsapp.ProtocolTreeNode" id="apidoc.element.node-wa.whatsapp.ProtocolTreeNode">
+        function <span class="apidocSignatureSpan">node-wa.whatsapp.</span>ProtocolTreeNode
+        <span class="apidocSignatureSpan">(tag, attributes, children, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ProtocolTreeNode = function (tag, attributes, children, data) {
+    this.tag = tag;
+    this.attributes = attributes;
+    this.children = children;
+    this.data = data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
