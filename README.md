@@ -1,6 +1,6 @@
 # npmdoc-node-wa
 
-#### api documentation for  [node-wa (v0.1.5)](https://github.com/wajatimur/node-wa)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-wa.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-wa) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-wa.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-wa)
+#### basic api documentation for  [node-wa (v0.1.5)](https://github.com/wajatimur/node-wa)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-wa.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-wa) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-wa.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-wa)
 
 #### Node Whatsapp API Client
 
@@ -54,7 +54,8 @@
         "type": "git",
         "url": "git://github.com/wajatimur/node-wa.git"
     },
-    "version": "0.1.5"
+    "version": "0.1.5",
+    "bin": {}
 }
 ```
 
